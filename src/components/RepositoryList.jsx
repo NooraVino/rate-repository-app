@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
   },
 });
 
+
+
 const repositories = [
   {
     id: 'jaredpalmer.formik',
@@ -63,8 +65,7 @@ const RepositoryList = () => {
       data={repositories}
       ItemSeparatorComponent={ItemSeparator}
       renderItem={({ item }) => 
-      //<Text>{item.fullName}</Text>
-      <RepositoryItem item={item} />
+      <RepositoryItem  item={item} />
   }
     />
   );
