@@ -2,10 +2,8 @@ const theme = {
   colors: {
     textPrimary: '#24292e',
     textSecondary: '#586069',
-    primary: '#0366d6',
-    tab: 'white',
+    textWhite: 'white',
    
- 
   },
   fontSizes: {
     body: 14,
@@ -18,17 +16,14 @@ const theme = {
     normal: '400',
     bold: '700',
   },
-  backgrounColor: {
-    tab: '#24292e'
+  backgroundColor: {
+    tab: '#24292e',
+    primary: '#0366d6', //blue
   },
   margin: {
-    tab: 20,
+    tab: 40,
   },
 
-
-
-  height: 60,
-  
 };
 
 export default theme;

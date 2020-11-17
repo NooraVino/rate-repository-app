@@ -1,29 +1,14 @@
 import React from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import Constants from 'expo-constants';
-import theme from '../theme';
-import Text from'./Text';
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: theme.backgrounColor.tab,
-    height: theme.height   
-  },
-  
-});
-
-
+import { View, TouchableWithoutFeedback } from 'react-native';
+import Text from './Text';
 
 
 const AppBarTab = () => {
-  return <View style={styles.container}>
+  return <View>
     <TouchableWithoutFeedback onPress={() => alert('Pressed!')}>
-   
       <Text color="tab" marginTab="margin">Repot</Text>
-   
-      </TouchableWithoutFeedback>
-    </View>;
+    </TouchableWithoutFeedback>
+  </View>;
 };
 
 export default AppBarTab;

@@ -13,35 +13,49 @@ const styles = StyleSheet.create({
   },
   colorTextSecondary: {
     color: theme.colors.textSecondary,
+    margin: 4
   },
   colorPrimary: {
     color: theme.colors.primary,
+    margin: 4
+  
   },
   fontSizeSubheading: {
     fontSize: theme.fontSizes.subheading,
   },
   fontWeightBold: {
     fontWeight: theme.fontWeights.bold,
+    margin: 4
   },
   colorTextTab: {
-    color: theme.colors.tab,
+    color: theme.colors.textWhite,
+   
   },
   marginTab: {
     margin: theme.margin.tab
+  },
+  buttonStyle: {
+    padding: 4,
+    color: 'white',
+    backgroundColor: theme.backgroundColor.primary,
+    alignSelf: 'flex-start',
+    borderRadius: 4,
+    margin: 4
   },
 
 
 });
 
-const Text = ({ color, fontSize, fontWeight, style, marginTab, ...props }) => {
+const Text = ({ color, fontSize, fontWeight, style, marginTab, buttonStyle, ...props }) => {
   const textStyle = [
     styles.text,
     color === 'textSecondary' && styles.colorTextSecondary,
     color === 'primary' && styles.colorPrimary,
-    color === 'tab'&& styles.colorTextTab,
+    color === 'tab' && styles.colorTextTab,
     fontSize === 'subh eading' && styles.fontSizeSubheading,
     fontWeight === 'bold' && styles.fontWeightBold,
     marginTab === 'margin' && styles.marginTab,
+    buttonStyle === 'button' && styles.buttonStyle,
     style,
   ];
 
