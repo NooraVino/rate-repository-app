@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     padding: 8,
     flexDirection: 'row',
     justifyContent: 'space-between'
+    
 
   },
   imageContainer: {
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 10
   },
+
 
 });
 
@@ -46,7 +48,7 @@ const RepositoryItem = ({ item }) => {
         </View>
 
         <View>
-          <Text fontWeight="bold">{item.fullName}</Text>
+          <Text fontSize="subheading">{item.fullName}</Text>
           <Text color="textSecondary">{item.description}</Text>
           <Text buttonStyle="button">{item.language}</Text>
         </View>
@@ -72,6 +74,7 @@ const RepositoryItem = ({ item }) => {
           <Text fontWeight="bold">{item.reviewCount}</Text>
         </View>
       </View>
+     
     </View>
   );
 };

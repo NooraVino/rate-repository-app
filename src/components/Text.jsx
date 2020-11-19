@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     fontSize: theme.fontSizes.body,
     fontFamily: theme.fonts.main,
     fontWeight: theme.fontWeights.normal,
-    marginTab: theme.margin.tab
+   
   },
   colorTextSecondary: {
     color: theme.colors.textSecondary,
@@ -21,19 +21,22 @@ const styles = StyleSheet.create({
   
   },
   fontSizeSubheading: {
-    fontSize: theme.fontSizes.subheading,
-  },
-  fontWeightBold: {
     fontWeight: theme.fontWeights.bold,
     margin: 4
   },
+  fontWeightBold: {
+    fontWeight: theme.fontWeights.bold,
+    margin: 4,
+    textAlign: 'center',
+
+  },
   colorTextTab: {
     color: theme.colors.textWhite,
+    fontWeight: theme.fontWeights.bold,
+    margin: theme.marginTop.tab,
    
   },
-  marginTab: {
-    margin: theme.margin.tab
-  },
+
   buttonStyle: {
     padding: 4,
     color: 'white',
@@ -46,15 +49,14 @@ const styles = StyleSheet.create({
 
 });
 
-const Text = ({ color, fontSize, fontWeight, style, marginTab, buttonStyle, ...props }) => {
+const Text = ({ color, fontSize, fontWeight, style, buttonStyle, ...props }) => {
   const textStyle = [
     styles.text,
     color === 'textSecondary' && styles.colorTextSecondary,
     color === 'primary' && styles.colorPrimary,
     color === 'tab' && styles.colorTextTab,
-    fontSize === 'subh eading' && styles.fontSizeSubheading,
-    fontWeight === 'bold' && styles.fontWeightBold,
-    marginTab === 'margin' && styles.marginTab,
+    fontSize === 'subheading' && styles.fontSizeSubheading,
+    fontWeight === 'bold' && styles.fontWeightBold, 
     buttonStyle === 'button' && styles.buttonStyle,
     style,
   ];

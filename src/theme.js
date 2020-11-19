@@ -20,8 +20,8 @@ const theme = {
     tab: '#24292e',
     primary: '#0366d6', //blue
   },
-  margin: {
-    tab: 40,
+  marginTop: {
+    tab: 20,
   },
 
 };
