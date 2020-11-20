@@ -19,6 +19,7 @@ const theme = {
   backgroundColor: {
     tab: '#24292e',
     primary: '#0366d6', //blue
+    textInput: 'white',
   },
   marginTop: {
     tab: 20,

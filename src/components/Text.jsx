@@ -13,20 +13,20 @@ const styles = StyleSheet.create({
   },
   colorTextSecondary: {
     color: theme.colors.textSecondary,
-    margin: 4
+    margin: 7
   },
   colorPrimary: {
     color: theme.colors.primary,
-    margin: 4
+    margin: 7
   
   },
   fontSizeSubheading: {
     fontWeight: theme.fontWeights.bold,
-    margin: 4
+    margin: 7
   },
   fontWeightBold: {
     fontWeight: theme.fontWeights.bold,
-    margin: 4,
+    margin: 7,
     textAlign: 'center',
 
   },
@@ -41,9 +41,19 @@ const styles = StyleSheet.create({
     padding: 4,
     color: 'white',
     backgroundColor: theme.backgroundColor.primary,
-    alignSelf: 'flex-start',
     borderRadius: 4,
-    margin: 4
+    margin: 7,
+    textAlign: 'center',
+    alignSelf: 'flex-start',
+  },
+
+  buttonStyleFlex: {
+    padding: 4,
+    color: 'white',
+    backgroundColor: theme.backgroundColor.primary,
+    borderRadius: 4,
+    margin: 7,
+    textAlign: 'center',
   },
 
 
@@ -58,6 +68,7 @@ const Text = ({ color, fontSize, fontWeight, style, buttonStyle, ...props }) => 
     fontSize === 'subheading' && styles.fontSizeSubheading,
     fontWeight === 'bold' && styles.fontWeightBold, 
     buttonStyle === 'button' && styles.buttonStyle,
+    buttonStyle === 'buttonFlex' && styles.buttonStyleFlex,
     style,
   ];
 

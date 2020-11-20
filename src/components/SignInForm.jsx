@@ -1,12 +1,19 @@
 import React from 'react';
-
+import { TouchableWithoutFeedback, View } from 'react-native';
+import FormikTextInput from './FormikTextInput';
 import Text from './Text';
 
-const SignInForm = () => {
+const SignInForm = ({ onSubmit }) => {
+
   return (
-    
-    <Text>My Component</Text>
+    <View>
+      <FormikTextInput name="username" placeholder="Username" />
+      <FormikTextInput name="password" placeholder="Password" secureTextEntry />
+      <TouchableWithoutFeedback onPress={onSubmit}>
+        <Text buttonStyle="buttonFlex">SignIn</Text>
+      </TouchableWithoutFeedback>
+    </View>
+  );
 
-  );};
-
+};
 export default SignInForm;

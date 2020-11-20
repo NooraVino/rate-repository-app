@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-native';
 import { StyleSheet, View } from 'react-native';
 import RepositoryList from './RepositoryList';
 import AppBar from './AppBar';
-import SignInForm from './SignInForm';
+import SignIn from './SignIn';
 
 
 const styles = StyleSheet.create({
@@ -26,7 +26,7 @@ const Main = () => {
           <RepositoryList />
         </Route>
         <Route path="/signIn" exact>
-          <SignInForm />
+          <SignIn />
         </Route>
 
 
