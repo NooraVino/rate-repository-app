@@ -1,8 +1,10 @@
 import ApolloClient from 'apollo-boost';
+import Constants from "expo-constants";
 
 const createApolloClient = () => {
+  console.log(Constants.manifest);
   return new ApolloClient({
-    uri: 'http://10.69.32.205:5000/graphql',
+    uri: Constants.manifest.extra.apolloUrl,
   });
 };
 
