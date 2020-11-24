@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { Formik } from 'formik';
 import SignInForm from './SignInForm';
 import  useSignIn  from '../hooks/useSignIn';
+import { useHistory }from 'react-router-native';
 
 const styles = StyleSheet.create({
   formContainer: {
@@ -29,6 +30,7 @@ const initialValues = {
 
 const SignIn = () => {
   const [signIn] = useSignIn();
+  const history = useHistory();
 
 
   const onSubmit = async(values) => {
@@ -36,7 +38,8 @@ const SignIn = () => {
 
     try {
       const data = await signIn({ username, password });
-      console.log(data);
+      //console.log(data);
+      history.push("/");
     } catch (e) {
       console.log(e);
     }
