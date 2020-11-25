@@ -19,15 +19,11 @@ const styles = StyleSheet.create({
 });
 
 
-
-
 const AppBar = () => {
   const { data } = useQuery(AUTHORIZED_USER);
- 
+
   console.log(data);
 
-
-  
   const authStorage = useContext(AuthStorageContext);
   const apolloClient = useApolloClient();
 
@@ -43,10 +39,10 @@ const AppBar = () => {
 
       <ScrollView horizontal>
         <RepositoriesTab link="/" />
-        {data ? (
-          <SignInTab link="/signIn">SignIn</SignInTab>
+        {data?.authorizedUser ? (
+          <SignInTab onPress={logout} link="/"> SignOut </SignInTab>
         ) : (
-            <SignInTab onPress={logout}link="/"> SignOut </SignInTab>
+            <SignInTab link="/signIn">SignIn</SignInTab>
           )
         }
 
