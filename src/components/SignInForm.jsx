@@ -7,10 +7,10 @@ const SignInForm = ({ onSubmit }) => {
 
   return (
     <View>
-      <FormikTextInput name="username" placeholder="Username" />
-      <FormikTextInput name="password" placeholder="Password" secureTextEntry />
+      <FormikTextInput name="username" placeholder="Username" testID="usernameField" />
+      <FormikTextInput name="password" placeholder="Password" testID="passwordField" secureTextEntry />
       <TouchableWithoutFeedback onPress={onSubmit}>
-        <Text buttonStyle="buttonFlex">SignIn</Text>
+        <Text buttonStyle="buttonFlex" testID="submitButton">SignIn</Text>
       </TouchableWithoutFeedback>
     </View>
   );
