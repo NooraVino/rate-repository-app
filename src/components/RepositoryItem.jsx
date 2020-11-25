@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
+import { changeToThousands } from './RepositoryListContainer';
+
 
 import Text from './Text';
 
@@ -32,11 +34,7 @@ const styles = StyleSheet.create({
 
 const RepositoryItem = ({ item }) => {
 
-  const changeToThousands = (value) => {
-    return value >= 1000
-      ? `${Math.round(value / 100) / 10}k`
-      : value;
-  };
+  
   return (
 
     <View style={styles.container} >
@@ -48,30 +46,30 @@ const RepositoryItem = ({ item }) => {
         </View>
 
         <View>
-          <Text fontSize="subheading">{item.fullName}</Text>
-          <Text color="textSecondary">{item.description}</Text>
-          <Text buttonStyle="button">{item.language}</Text>
+          <Text fontSize="subheading" testID="fullname">{item.fullName}</Text>
+          <Text color="textSecondary" testID="description">{item.description}</Text>
+          <Text buttonStyle="button" testID="language">{item.language}</Text>
         </View>
 
       </View>
 
       <View style={styles.sectionContainer}>
         <View>
-          <Text color="textSecondary">Forks </Text>
-          <Text fontWeight="bold" >{changeToThousands(item.forksCount)}</Text>
+          <Text color="textSecondary" >Forks </Text>
+          <Text fontWeight="bold" testID="forks">{changeToThousands(item.forksCount)}</Text>
         </View>
         <View>
           <Text color="textSecondary">Stars </Text>
-          <Text fontWeight="bold">{changeToThousands(item.stargazersCount)}</Text>
+          <Text fontWeight="bold" testID="stars">{changeToThousands(item.stargazersCount)}</Text>
         </View>
         <View>
           <Text color="textSecondary">Rating </Text>
-          <Text fontWeight="bold">{item.ratingAverage}</Text>
+          <Text fontWeight="bold" testID="rating">{item.ratingAverage}</Text>
         </View>
 
         <View>
           <Text color="textSecondary">Reviews</Text>
-          <Text fontWeight="bold">{item.reviewCount}</Text>
+          <Text fontWeight="bold" testID="review">{item.reviewCount}</Text>
         </View>
       </View>
      
