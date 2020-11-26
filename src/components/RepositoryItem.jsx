@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { changeToThousands } from './RepositoryListContainer';
-
-
+import * as Linking from "expo-linking";
 import Text from './Text';
 
 const styles = StyleSheet.create({
@@ -19,7 +18,7 @@ const styles = StyleSheet.create({
     padding: 8,
     flexDirection: 'row',
     justifyContent: 'space-between'
-    
+
 
   },
   imageContainer: {
@@ -27,14 +26,10 @@ const styles = StyleSheet.create({
     height: 50,
     margin: 10
   },
-
-
 });
 
+const RepositoryItem = ({ item, singleView }) => {
 
-const RepositoryItem = ({ item }) => {
-
-  
   return (
 
     <View style={styles.container} >
@@ -72,8 +67,16 @@ const RepositoryItem = ({ item }) => {
           <Text fontWeight="bold" testID="review">{item.reviewCount}</Text>
         </View>
       </View>
-     
+      {singleView ? (
+        <View>
+          <Text buttonStyle="buttonFlex" onPress={() => Linking.openURL(item.url)}>Open in GitHub</Text>
+        </View>
+      ) :
+        (<View></View>
+        )}
     </View>
+
+
   );
 };
 

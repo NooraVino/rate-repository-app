@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import RepositoryList from './RepositoryList';
 import AppBar from './AppBar';
 import SignIn from './SignIn';
+import Repository from './Repository';
 
 
 const styles = StyleSheet.create({
@@ -28,8 +29,9 @@ const Main = () => {
         <Route path="/signIn" exact>
           <SignIn />
         </Route>
-
-
+        <Route path="/:id">
+          <Repository />
+        </Route>
 
         <Redirect to="/" />
       </Switch>
